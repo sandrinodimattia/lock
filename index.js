@@ -12,7 +12,7 @@ var bonzo = require('bonzo');
 var bean = require('bean');
 var _ = require('underscore');
 var debug = require('debug')('auth0-lock');
-var Auth0 = require('auth0-js');
+var Auth0 = require('../auth0.js');
 var $ = require('./lib/bonzo-augmented');
 var EventEmitter = require('events').EventEmitter;
 
@@ -86,7 +86,8 @@ function Auth0Lock (clientID, domain, options) {
   this.$auth0 = new Auth0({
     clientID: this.$options.clientID,
     domain: this.$options.domain,
-    useCordovaSocialPlugins: this.$options.useCordovaSocialPlugins
+    useCordovaSocialPlugins: this.$options.useCordovaSocialPlugins,
+    tenant: this.$options.tenant
   });
 
   // use domain as assetsUrl if no assetsUrl provided
