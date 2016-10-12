@@ -87,7 +87,8 @@ function Auth0Lock (clientID, domain, options) {
     clientID: this.$options.clientID,
     domain: this.$options.domain,
     useCordovaSocialPlugins: this.$options.useCordovaSocialPlugins,
-    tenant: this.$options.tenant
+    tenant: this.$options.tenant,
+    tenantDomain: this.$options.tenantDomain
   });
 
   // use domain as assetsUrl if no assetsUrl provided
